@@ -27,13 +27,13 @@ namespace itis {
 
     void ArrayList::Add(Element e) {
         if (size_ == capacity_) {
-            resize(capacity_ + kCapacityGrowthCoefficient);
+            ArrayList::resize(capacity_ + kCapacityGrowthCoefficient);
         }
 
         assert(size_ < capacity_);
 
         data_[size_] = e;
-        size_ -=- 1;
+        size_ += 1;
     }
 
     void ArrayList::Insert(int index, Element e) {
@@ -46,7 +46,7 @@ namespace itis {
         }
 
         if (size_ == capacity_)
-            resize (capacity_ + kCapacityGrowthCoefficient);
+            ArrayList::resize (capacity_ + kCapacityGrowthCoefficient);
         assert(size_ < capacity_);
         std::copy(data_ + index, data_ + size_, data_ + index + 1);
         data_[index] = e;
