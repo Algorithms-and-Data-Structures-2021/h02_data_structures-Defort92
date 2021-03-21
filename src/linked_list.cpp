@@ -56,9 +56,10 @@ namespace itis {
         // Tip 2: используйте функцию find_node(index)
         // напишите свой код здесь ...
         if (index == 0) {
+            Node *new_head = head_ -> next;
             Element ret_value = head_ -> data;
             delete head_;
-            head_ = head_ -> next;
+            head_ = new_head;
             size_ -= 1;
             return ret_value;
         }
